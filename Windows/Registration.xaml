@@ -1,0 +1,28 @@
+﻿<Window x:Class="Diplom.Windows.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom.Windows"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        Title="Registration" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Border MinHeight="450" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="610" CornerRadius="30" Height="450" Width="610" MouseDown="Border_MouseDown1">
+            <StackPanel>
+                <TextBlock Text="Регистрация" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите фамилию" Text="{Binding Surname}" Name="SurnameTB" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите имя" Text="{Binding Name}" Name="NameTB" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите отчество" Text="{Binding Patronymic}" Name="PatronymicTB" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите логин" Text="{Binding Login}" Name="LoginTB1" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFilledTextBox}" Text="{Binding Password}" Name="PasswordBB1"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите должность" Text="{Binding Dolzhnost}" Name="DolzhnostTB" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+                <Button Content="Зарегестрироваться" Margin="0 20" Click="Autor_Click2"/>
+            </StackPanel>
+        </Border>
+        <Image Source="/Images/Login.png" Width="30" Height="30" Margin="0 0 580 -50"/>
+        <Image Source="/Images/Lock.png" Width="30" Height="30" Margin="0 0 580 -140"/>
+        <fa:ImageAwesome Icon="Close" Width="20" Height="20" Margin="555 0 0 400" MouseUp="Image_MouseUp"/>
+    </Grid>
+</Window>

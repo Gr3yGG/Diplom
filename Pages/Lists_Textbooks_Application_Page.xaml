@@ -1,0 +1,82 @@
+﻿<Page x:Class="Diplom.Pages.Lists_Textbooks_Application_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Lists_Textbooks_Application_Page"
+      IsVisibleChanged="Doc_Vis_Change">
+
+    <Grid Background="#FFD3EB">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <UniformGrid Columns="2">
+            <TextBox materialDesign:HintAssist.Hint="Поиск" Name="Search" FontSize="15" TextChanged="SearchChanged" Margin="1"/>
+            <ComboBox Name="Filt" SelectionChanged="FiltChanged" Margin="3"/>
+        </UniformGrid>
+
+
+        <DataGrid Grid.Row="1" Name="DataGridLists_Textbooks_Application" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Binding="{Binding Author}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Автор" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Name}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Имя" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding IdClass}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Класс" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Reader}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Читатель" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Librarian}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Библиотекарь" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding DateOfIssue}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Дата выпуска" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding ReturnDate}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Дата возврата" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <UniformGrid Grid.Row="2" Columns="4">
+            <Button Margin="5" Content="Добавить" FontSize="20" Click="Add_Show_Click"/>
+            <Button Margin="5" Content="Удалить" FontSize="20" Click="Del_Show_Click"/>
+            <Button Margin="5" Content="Редакт" FontSize="20" Click="Redact_Show_Click"/>
+            <Button Margin="5" Content="Экспорт" FontSize="20" Click="Export_Click"/>
+        </UniformGrid>
+
+    </Grid>
+</Page>

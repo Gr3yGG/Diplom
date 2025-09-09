@@ -1,0 +1,25 @@
+﻿<Window x:Class="Diplom.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Border MinHeight="312" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="610" CornerRadius="20" Height="312" Width="610" MouseDown="Border_MouseDown">
+            <StackPanel>
+                <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите логин" Name="LoginTB" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFilledRevealPasswordBox}" Name="PasswordBB"/>
+                <Button Content="Войти" Margin="0 20" Click="Autor_Click"/>
+                <Button Content="Зарегестрироваться" Margin="0 -1" Click="Autor_Click1"/>
+            </StackPanel>
+        </Border>
+        <Image Source="/images/Login.png" Width="30" Height="30" Margin="0 0 580 86"/>
+        <Image Source="/images/Lock.png" Width="30" Height="30" Margin="0 0 580 -5"/>
+        <fa:ImageAwesome Icon="Close" Width="20" Height="20" Margin="555 0 0 250" MouseUp="Image_MouseUp"/>
+    </Grid>
+</Window>
